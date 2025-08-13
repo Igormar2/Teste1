@@ -1,2 +1,2 @@
-# Teste1
-primeiro teste
+Teste - par ou ímpar
+repositorio do teste do projeto lógica em jogo
