@@ -1,88 +1,53 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 #include <time.h>
+#define Pedra 1
+#define Papel 2
+#define Tesoura 3
+#define Spoke 4
+#define Largato 5
+
+
+ 
+
 
 int main(){
-    int J1 = 0;
-    int M1 = 0;
-    char n1 [10];
-    
-    printf("Bem vindo ao PPT 2000!!!");
-    printf("\n Aqui você tera a melhor experiencia de PPT (Pedra, papel, tesoura) de todos os tempos...");
-    printf("\n Primeiramente, qual é o nome de vossa senhoria?");
-    printf(".");
-    printf(".");
-    printf(".\n");
-    
-    scanf("%s", n1);
-    
-    printf("%s, \n vamos começar o jogo, faca sua escolha rapido!!\n", n1);
-    
-    printf("opcões: 1 = Pedra, 2 = Papel 3 = Tesoura\n ");
-    scanf("%d", &J1);
-    srand(time(NULL));
-    M1 = rand() % 3 + 1;
-    
-    
-    
-    if (J1 == 1){
-        if (M1 == 2){
-            printf("%s: Pedra\n", n1);
-            printf("M1: papel...\n");
-            printf("embrulhado");
-        }
-        if (M1 == 3){
-            printf("%s: Pedra\n", n1);
-            printf("M1: Tesoura...\n");
-             printf("Amassou");
-        }
-        if (M1 == 1){
-           printf("%s: Pedra\n ", n1);
-           printf("M1: Pedra... \n");
-           printf("Empate técnico");
-    }
-    }
-    
-      if (J1 == 2){
-        if (M1 == 3 ){
-           printf("%s: Papel\n", n1);
-           printf("M1: Tesoura...\n");
-           printf("PATO");
-        }
-        if (M1 == 1){
-             printf("%s: Papel\n", n1);
-             printf("M1: Pedra...\n");
-             printf("Amassou");
-        }
-        if (M1 == 2){
-               printf("%s: Papel\n", n1);
-               printf("M1: Papel...\n");
-               printf("vish.. deu velha");
-    
-        }
-    }
-    
-      if (J1 == 3){
-        if (M1 == 1 ){
-            printf("%s: Tesoura\n", n1);
-            printf("M1: Pedra...\n");
-            printf("Volta pra adedanha");
-        }
-        if (M1 == 2 ){
-             printf("%s: Tesoura\n", n1);
-             printf("M1: Papel...\n");
-             printf("Amassou");
-        }
-         if (M1 == 3){
-               printf("%s: Tesoura\n", n1);
-               printf("M1: Tesoura...\n");
-               printf("vish.. deu velha !?");
-    
-        }
-    }
-    
-    
+  int J1 = 0;
+  int M1 = 0;
+  char dnv;
+  int Vencer [2][6] = { {0, Tesoura, Pedra, Papel, Tesoura, Papel} , {0, Largato, Spoke, Largato, Pedra, Spoke}};
+  int pontuação [6][6] = {0,0,0,0,0,0} , {0,0,-3,1,4,2} , {0,3,0,- {0 {0
+  
+  
+  do{
+  for(int i = 0; i <= 2; i++){
+  printf("escolha:\n");
+  printf("Pedra, Papel, Tesoura, Spoke, Largato\n");
+  scanf("%d",&J1);
+  
+  srand(time(NULL));
+  M1 = rand() % 5 + 1;
+
+
+  if(J1 == M1){
+      printf("Jogador = %d\n", J1);
+      printf("Maquina = %d\n", M1);
+      printf("ixi, deu velha!");
+  } else if (Vencer[0][J1] == M1 || Vencer[1][J1] == M1 ){
+      printf("você venceu!\n");
+      printf("Jogador = %d\n", J1);
+      printf("Maquina = %d\n", M1);
+  }else{
+      printf("Jogador = %d\n", J1);
+      printf("Maquina = %d\n", M1);
+      printf("você perdeu!\n");
+  }
+
+}
+  printf("quer jogar novamente? (s/n):");
+  scanf(" %c",&dnv);
+  } while(dnv == 's' || dnv == 'S');
 }
 
-   
