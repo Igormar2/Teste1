@@ -39,19 +39,18 @@ int main()
     printf("%s\n",display);
     printf(" Erros :%d\n",erros);
    
-    if (erros == max_tentativas){
+    if (erros == max_tentativas)
+    {
        enforcou++;
     }
+
     }
-    
-    
-    if(enforcou == 1){
+    if(enforcou == 1)
+    {
         printf("Gameover!"); 
-    }else {
+    }else 
+    {
         printf("Ganhou!");
     }
-   
-
-
     return 0;
 }
